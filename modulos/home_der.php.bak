@@ -1,0 +1,9 @@
+<?php include ("./msje_noautorizado.php"); ?>
+
+<br><br>
+<a href="http://www.youtube.com"><img src="./imagenes/youtube.png" width="100" border="0" alt="youtube"></a><br><br>
+<a href="http://www.google.com"><img src="./imagenes/Google.png" width="100" border="0" alt="Google"></a><br><br>
+<a href="http://www.facebook.com"><img src="./imagenes/facebook.png" width="100" border="0" alt="Facebook"></a><br><br>
+<a href="http://www.somosjujuy.com.ar"><img src="./imagenes/somosjujuy.png" width="100" border="0" alt="Somosjujuy"></a><br><br>
+<a href="http://www.educacion.jujuy.gob.ar"><img src="./imagenes/EDUCACION.jpg" width="100" border="0" alt="Ministerio de Educaci&oacute;n"></a>
+

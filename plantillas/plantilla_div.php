@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="cabecera">
+		<?php include ($path_includesvarios."cabecera.php"); ?>
+	</div>
+	<div class="menu">
+		<ul class="nav">
+			<li>
+				<a href="./main.php?mod=home">&nbsp;&nbsp;Inicio<span class="flecha">&#9660;</span>&nbsp;&nbsp;</a>
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;Archivos<span class="flecha">&#9660</span>&nbsp;&nbsp;</a>
+				<ul>
+					<li><a href="./main.php?mod=car">Cargos</a></li>
+					<li><a href="./main.php?mod=prof">Profesores</a></li>
+					<li><a href="./main.php?mod=curs">Cursos</a></li>
+					<li><a href="./main.php?mod=mat">Materias</a></li>
+					<li><a href="./main.php?mod=cup">Cupof</a></li>
+					<li><a href="./main.php?mod=pca">Profesor y sus cargos</a></li>
+					<li><a href="./main.php?mod=pcu">Profesor y cupof</a></li>
+
+				</ul>
+			</li>
+			<li><a href=" ">&nbsp;&nbsp;Consultas<span class="flecha">&#9660</span>&nbsp;&nbsp;</a>
+				<ul>
+					<li><a href="./main.php?mod=cprof">Profesores</a></li>
+				</ul>  
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;Licencias<span class="flecha">&#9660</span>&nbsp;&nbsp;</a>
+				<ul>
+					<li><a href="./main.php?mod=home">Opci&oacute;n 1</a></li>
+					<li><a href="./main.php?mod=home">Opci&oacute;n 2</a></li>
+					<li><a href="./main.php?mod=home">Opci&oacute;n 3</a></li>
+
+				</ul>
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;Pases alumnos<span class="flecha">&#9660</span>&nbsp;&nbsp;</a>
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;T&iacute;tulos<span class="flecha">&#9660</span>&nbsp;&nbsp;</a>
+			</li>
+		</ul>
+	</div>
+	<div class="contenido">
+		<?php include ($contenido); ?>
+	</div>
+	<div class="enlaces">
+		<?php include ($contenido_der); ?>
+	</div>
+	<div class="pie">
+		<?php include ($path_includesvarios."pie.php"); ?>
+	</div>
+</div>

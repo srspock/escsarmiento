@@ -1,0 +1,186 @@
+*{
+margin:0;
+padding:0;
+}
+body{
+background:#fff;
+}
+.tablas {
+width:100%
+border-collapse: collapse;
+}
+.uno {
+padding:5px auto;
+background:#4682B4;
+/*border: 2 solid;*/
+font-family: Arial;
+text-align:center;
+}
+.uno #logo img
+{
+ width:20px;
+ height: 20px;
+}
+.cuerpo {
+height: 550px;
+}
+
+.navegacion {
+width: 100%; /*ancho en pixeles del menu*/
+margin: 0px auto; /* 0px es margen arriba y abajo auto: margenes a los costados*/
+background:#4682B4;
+}
+.navegacion ul {
+list-style: none; /*quita lasviñetas de la lista*/
+}
+
+.menu > li {
+position: relative; /* para que el menu no se vaya a cualquier parte  */
+display: inline-block; /* para que los nombres del menu vayan uno al lado del otro*/
+}
+.menu > li > a { /*estilos a los botones o enlaces -- el simbolo > llama a li y a "a"*/
+display: block; /* que sea todo un block  */
+padding: 15px 20px; /* relleno de 15px arriba y abajo y 20px a los costados   */
+color: #000;
+font-family: Arial;
+text-decoration:none; /*para que no tengan subrayado*/
+}
+.menu li a:hover { /*efecto al pasar el mouse sobre el menu*/
+color:#fff;
+background-color: #000;
+transition: all 0.3s; /* tiempo de la transicion al pasar el mouse*/
+}
+/*submenu*/
+.submenu {
+position: absolute; /* para que el submenu vaya para abajo */
+background:#4682B4;
+width: 125px; /* ancho del submenu*/
+display: none; /* para que se oculte el submenu*/
+}
+.submenu li a{
+background:#4682B4;
+display: block;
+color:#000;
+padding: 10px 15px;
+font-family:Arial;
+text-decoration: none;
+}
+.menu li:hover .submenu {
+display:block; /* para que el submenu aparezca cuando pasamos el mouse*/
+color:#FFF;
+}
+.submenu2 {
+position: absolute; /* para que el submenu vaya para abajo */
+background:#4682B4;
+width: 109px; /* ancho del submenu*/
+display: none; /* para que se oculte el submenu*/
+}
+.submenu2 li a{
+background:#4682B4;
+display: block;
+color:#000;
+padding: 10px 15px;
+font-family:Arial;
+text-decoration: none;
+}
+.menu li:hover .submenu2 {
+display:block; /* para que el submenu aparezca cuando pasamos el mouse*/
+color:#FFF;
+}
+.cuerpo {
+height: 505px;
+background: #E3DFDE;
+}
+#izquierda {
+width:2000px;
+}
+#derecha
+{
+background: #4682B4;
+font-family: arial;
+width: 300px;
+text-align: center;
+font-family:arial;
+color:black;
+text-decoration:none;
+}
+#derecha a {
+font-family:arial;
+color:black;
+text-decoration:none;
+}
+#derecha a:hover {
+color:white;
+padding: 6px 6px;
+background:black;
+}
+#derecha h2 {
+font-family: Times new roman;
+}
+.abajo {
+background:#4682B4;
+height: 35px;
+text-align: center;
+font-size: 20px;
+}
+#contenedor{
+margin:150px;
+width: 600px;
+}
+table{
+border-collapse:collapse;
+text-align:left;
+background: white;
+font-family:Arial Narrow;
+
+}
+thead td{
+background-color: #045DC5;
+border-bottom:solid 5px #203364;
+font-size:25px;
+color:#fff;
+text-align: center;
+}
+table tr{
+height: 40px;
+width: 100%;
+
+}
+table tr a{
+color:blue;
+text-decoration:none;
+}
+table .facil {
+font-size:25px;
+padding: 10px 20px;
+}
+table .facil2 {
+width:350px;
+height: 30px;
+font-size:20px;
+}
+.facil3 {
+font-size:22px;
+}
+.facil4 {
+font-size: 25px;
+color:#0E0ADC;
+}
+#aceptar1 {
+background: #0D3666;
+border: solid 1 red;
+display:inline-block;
+padding: 5px;
+color:#fff;
+font-size: 20px;
+width:60%;
+height: 50px;
+margin: 0px auto;
+border-radius:7px;
+cursor: pointer;
+box-shadow: 0px 1px 0px black;
+}
+input#aceptar1:hover{
+background-color: #033F3C;
+color:#2CFD02;
+}

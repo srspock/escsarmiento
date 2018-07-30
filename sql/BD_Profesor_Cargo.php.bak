@@ -1,0 +1,71 @@
+<?php
+require_once 'BD_class_abstracta.php';
+
+class BD_Profesor_Cargo extends BD_class_abstracta {
+
+	 private $post;
+
+	function setPost($v) {
+		$this->post=$v;
+	}
+
+	function procesarPeticion() {
+
+		$act=$this->post['act'];
+		$id=$this->post['id'];
+		$idprofesor=$this->post['selProfesor'];
+		$idcargo=$this->post['selCargo'];
+
+		switch ($act) {
+			case "a":
+					$sql="INSERT INTO profesor_cargo (ID_PROFESOR, ID_CARGO) VALUES ('$idprofesor','$idcargo' )";
+					break;
+			case "m":
+					$sql="UPDATE profesor_cargo SET ID_PROFESOR='$idprofesor', ID_CARGO='$idcargo' WHERE ID=$id";
+					break;
+			case "b":
+					$sql="DELETE FROM profesor_cargo WHERE ID=$id";
+					break;
+			default:
+					$sql="";
+		}
+
+		$ret=$this->ejecutarConsulta($sql);
+		
+		return $ret;
+	}
+
+	function stringConsultaTabla() {
+		$sql="SELECT pc.id, pc.id_profesor, pc.id_cargo, p.id, p.apellido as apellidoprof, p.nombre as nombreprof, p.cuil, c.id, c.nombre as nombrecargo FROM profesor_cargo as pc, profesores as p, cargos as c WHERE pc.id_profesor=p.id AND pc.id_cargo=c.id";
+		$sql=$sql." ORDER BY p.apellido, p.nombre";
+		return $sql;
+	}
+
+	function consultarTodo() {
+
+		$sql="SELECT id, id_profesor, id_cargo FROM profesor_cargo";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			while ($fila = mysqli_fetch_array($result)) {
+				$vSalida[]=$fila;
+			}
+		return $vSalida;
+	}
+
+	function consultarRegistro($id) {
+
+		$sql="SELECT id, id_profesor, id_cargo FROM profesor_cargo WHERE ID=$id";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			$vSalida=mysqli_fetch_array($result);
+        return $vSalida;
+
+	}
+	
+}
+
+?>

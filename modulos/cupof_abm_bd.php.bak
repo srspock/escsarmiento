@@ -1,0 +1,15 @@
+<?php
+
+require_once $path_sql."BD_Profesor.php";
+
+$page=$_GET['page'];
+
+$profesor=new BD_Profesor();
+$profesor->setPost($_POST);
+$ret=$profesor->procesarPeticion();
+if ($ret)
+	echo "<center><a href='main.php?mod=prof&page=$page'>Operaci&oacute;n exitosa! Pulse aqu&iacute; para volver</a></center>";
+else
+	echo "<center><a href='main.php?mod=prof&page=$page'>No pudo ejecutarse la operaci&oacute;n! Pulse aqu&iacute; para volver</a></center>";
+
+?>

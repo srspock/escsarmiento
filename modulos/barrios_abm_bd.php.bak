@@ -1,0 +1,15 @@
+<?php
+
+require_once './clases/BD_Barrio.php';
+
+$page=$_GET['page'];
+
+$barrio=new BD_Barrio();
+$barrio->setPost($_POST);
+$ret=$barrio->procesarPeticion();
+if ($ret)
+	echo "<center><a href='main.php?mod=bar1&page=$page'>Operación exitosa! Pulse aquí para volver</a></center>";
+else
+	echo "<center><a href='main.php?mod=bar1&page=$page'>No pudo ejecutarse la operación! Pulse aquí para volver</a></center>";
+
+?>

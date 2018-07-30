@@ -1,0 +1,3 @@
+<?php include ("./msje_noautorizado.php"); ?>
+
+<center><img src="<?php echo $path_imagenes.'Luis Miguel.jpg'; ?>" width="646" height="350" border="0" alt=""></center>

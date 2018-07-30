@@ -1,0 +1,3 @@
+<?php include ("./msje_noautorizado.php"); ?>
+
+<center><img src="<?php echo $path_imagenes.'colegio.jpg'; ?>" width="600px"></center>

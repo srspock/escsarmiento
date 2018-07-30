@@ -1,0 +1,70 @@
+<?php
+require_once 'BD_class_abstracta.php';
+
+class BD_Cargo extends BD_class_abstracta {
+
+	 private $post;
+
+	function setPost($v) {
+		$this->post=$v;
+	}
+
+	function procesarPeticion() {
+
+		$act=$this->post['act'];
+		$id=$this->post['id'];
+		$nom=$this->post['nombre'];
+
+		switch ($act) {
+			case "a":
+					$sql="INSERT INTO cargos (NOMBRE) VALUES ('$nom')";
+					break;
+			case "m":
+					$sql="UPDATE cargos SET NOMBRE='$nom' WHERE ID=$id";
+					break;
+			case "b":
+					$sql="DELETE FROM cargos WHERE ID=$id";
+					break;
+			default:
+					$sql="";
+		}
+
+		$ret=$this->ejecutarConsulta($sql);
+		
+		return $ret;
+	}
+
+	function stringConsultaTabla() {
+		$sql="SELECT cargos.id, cargos.nombre  FROM cargos";
+		$sql=$sql." ORDER BY cargos.nombre ASC";
+		return $sql;
+	}
+
+	function consultarTodo() {
+
+		$sql="SELECT id, nombre FROM cargos";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			while ($fila = mysqli_fetch_array($result)) {
+				$vSalida[]=$fila;
+			}
+		return $vSalida;
+	}
+
+	function consultarRegistro($id) {
+
+		$sql="SELECT id, nombre FROM cargos WHERE ID=$id";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			$vSalida=mysqli_fetch_array($result);
+        return $vSalida;
+
+	}
+	
+}
+
+?>

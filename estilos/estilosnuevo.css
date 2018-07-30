@@ -1,0 +1,142 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-gap: 0px;
+}
+.cabecera {
+  background-image: url("../imagenes/cabecera1.png");
+  background-size: 100% 100%;
+  height: 100px;
+  text-align: right;
+  color: #bfbf40;
+  grid-column: 1 / 4;
+  vertical-align: center;
+  font-family: 'Comic Sans';
+  font-size: 40px;
+  padding: 10px;
+}
+.menu {
+  background-color: #000066;
+  text-align: center;
+  color: yellow;
+  grid-column: 1 / 4;
+  padding-left: 10px;
+}
+.enlaces p {
+  background-color: yellow;
+  font-size: 15px;
+}
+.enlaces {
+  background-color: #d7d7d7;
+  text-align: center;
+  color: black;
+  font-family: Fantasy;
+  font-size: 15px;
+}
+.enlaces p {
+  font-weight: bold;
+}
+.pie {
+  background-color: blue;
+  text-align: center;
+  color: yellow;
+  grid-column: 1 / 4;
+}
+
+.contenido {
+  background: white;
+  grid-column: 1 / 3;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.contenido table {
+  font-style: normal;
+  margin: 0 auto;  
+  padding: 10px;
+  border: black 2px solid;
+  border-collapse: collapse;
+}
+
+.contenido table th {
+  background: #000066;
+  color: #33ffff;
+  padding: 10px;
+  font-family: sans-serif;
+}
+.contenido table td {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: black 2px solid;
+  background-color: #fff4d2;
+}
+select {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+table input {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+.tabladisplay {
+	background: #cc99cc;
+	border: red 2px solid;
+}
+
+/*
+.contenido table tr :nth-child(1) {
+  padding: 10px;
+}
+.contenido table tr :nth-child(2) {
+  text-align: center;
+  padding: 10px;
+}
+*/
+
+/* ESTILO DEL MENU Y SUBMENU */
+
+* {
+	font-family: sans-serif;
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	
+}
+.nav > li {
+	float: left;
+}
+.nav li a {
+	background: #990033;
+	color: #FFF;
+	display: block;
+	border: 1px solid;
+	padding: 10px 12 px;
+}
+.nav li a:hover {
+	background: #0fbfc6;
+}
+.nav li ul {
+	display: none;
+	position: absolute;
+	min-width: 140px;
+}
+.nav li:hover > ul {
+	display: block;
+}
+.nav li ul li {
+	position: relative;
+}
+.nav li ul li ul {
+	right: -140px;
+	top: 0;
+}
+.nav li .flecha {
+	font-size: 9px;
+	padding-left: 6px;
+	display: none;
+}
+.nav li a:not(:last-child) .flecha  {
+	display: inline;
+}

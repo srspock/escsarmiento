@@ -1,0 +1,76 @@
+<?php
+require_once 'BD_class_abstracta.php';
+
+class BD_Profesor extends BD_class_abstracta {
+
+	 private $post;
+
+	function setPost($v) {
+		$this->post=$v;
+	}
+
+	function procesarPeticion() {
+
+		$act=$this->post['act'];
+		$id=$this->post['id'];
+		$ape=$this->post['formApellido'];
+		$nom=$this->post['formNombre'];
+		$cuil=$this->post['formCuil'];
+		$caracter=$this->post['selCaracter'];
+		$cargo=$this->post['selCargo'];
+		$fig=$this->post['figLaboral'];
+		$niv=$this->post['selNivel'];
+
+		switch ($act) {
+			case "a":
+					$sql="INSERT INTO profesores (APELLIDO, NOMBRE, CUIL, CARACTER, ID_CARGO, FIG_LABORAL, NIVEL) VALUES ('$ape', '$nom', '$cuil', '$caracter', '$cargo', '$fig', '$niv')";
+					break;
+			case "m":
+					$sql="UPDATE profesores SET APELLIDO='$ape', NOMBRE='$nom', CUIL='$cuil', CARACTER='$caracter', ID_CARGO='$cargo', FIG_LABORAL='$fig', NIVEL='$niv' WHERE ID=$id";
+					break;
+			case "b":
+					$sql="DELETE FROM profesores WHERE ID=$id";
+					break;
+			default:
+					$sql="";
+		}
+
+		$ret=$this->ejecutarConsulta($sql);
+		
+		return $ret;
+	}
+
+	function stringConsultaTabla() {
+		$sql="SELECT p.id, p.apellido, p.nombre, p.cuil, p.caracter, p.id_cargo, c.nombre as dcargo FROM profesores p, cargos c WHERE p.id_cargo = c.id";
+		$sql=$sql." ORDER BY p.apellido, p.nombre ASC";
+		return $sql;
+	}
+
+	function consultarTodo() {
+
+		$sql="SELECT id, apellido, nombre, cuil, caracter, id_cargo, fig_laboral, nivel FROM profesores";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			while ($fila = mysqli_fetch_array($result)) {
+				$vSalida[]=$fila;
+			}
+		return $vSalida;
+	}
+
+	function consultarRegistro($id) {
+
+		$sql="SELECT id, apellido, nombre, cuil, caracter, id_cargo, fig_laboral, nivel FROM profesores WHERE ID=$id";
+		$result=$this->ejecutarConsulta($sql);
+		$num=mysqli_num_rows($result);
+		$vSalida=null;
+		if ($num>0)
+			$vSalida=mysqli_fetch_array($result);
+        return $vSalida;
+
+	}
+	
+}
+
+?>
